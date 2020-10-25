@@ -12,7 +12,7 @@
     <p>Môn Toán <input type="text" id="toan"></p>
     <p>Môn Văn <input type="text" id="van"></p>
     <p>Môn Anh <input type="text" id="anh"></p>
-    <p>Khu vực <select id="khuvuc">
+    <p>Khu vực <select id="khuvuc" onchange="diemcong()">
             <option value="KV1">KV1</option>
             <option value="KV2">KV2</option>
             <option value="KV2-NT">KV2-NT</option>
@@ -21,24 +21,16 @@
     <input type="button" value="Tinh diem" onclick="tinhdiem()">
     <p id="ketqua"></p>
     <script>
-        function tinhdiem(){
-            let a = document.getElementById("khuvuc").value 
-            switch (a){
-                case "KV1": 
-                    let diemcong = 0.75
-                    break
-                    case "KV2": 
-                    let diemcong = 0.5
-                    break
-                    case "KV2-NT":
-                    let diemcong = 0.25
-                    break
-                    case "KV3":
-                    let diemcong = 0
-                    break
-            }
-            
+  
+        function tinhdiem() {
+            let dt = parseInt(document.getElementById("toan").value)
+            let dv = parseInt(document.getElementById("van").value)
+            let da = parseInt(document.getElementById("anh").value)
+            let dh = dt + dv + da 
+            document.getElementById("ketqua").innerHTML = ("Điểm thi Đại học khối D của bạn là " + dh + " điểm")
         }
+
+
     </script>
 
 
