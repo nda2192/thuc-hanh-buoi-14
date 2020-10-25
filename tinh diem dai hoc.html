@@ -12,7 +12,7 @@
     <p>Môn Toán <input type="text" id="toan"></p>
     <p>Môn Văn <input type="text" id="van"></p>
     <p>Môn Anh <input type="text" id="anh"></p>
-    <p>Khu vực <select id="khuvuc" onchange="diemcong()">
+    <p>Khu vực <select id="khuvuc">
             <option value="KV1">KV1</option>
             <option value="KV2">KV2</option>
             <option value="KV2-NT">KV2-NT</option>
@@ -21,16 +21,32 @@
     <input type="button" value="Tinh diem" onclick="tinhdiem()">
     <p id="ketqua"></p>
     <script>
-  
         function tinhdiem() {
+            let a = document.getElementById("khuvuc").value
             let dt = parseInt(document.getElementById("toan").value)
             let dv = parseInt(document.getElementById("van").value)
             let da = parseInt(document.getElementById("anh").value)
-            let dh = dt + dv + da 
-            document.getElementById("ketqua").innerHTML = ("Điểm thi Đại học khối D của bạn là " + dh + " điểm")
+            switch (a) {
+                case "KV1":
+                    let dh1 = dt + dv + da + 0.75
+                    document.getElementById("ketqua").innerHTML = ("Điểm thi Đại học khối D của bạn là " + dh1 + " điểm")
+                    break
+                    case "KV2":
+                    let dh2 = dt + dv + da + 0.5
+                    document.getElementById("ketqua").innerHTML = ("Điểm thi Đại học khối D của bạn là " + dh2 + " điểm")
+                    break
+                    case "KV2-NT":
+                    let dh3 = dt + dv + da + 0.25
+                    document.getElementById("ketqua").innerHTML = ("Điểm thi Đại học khối D của bạn là " + dh3 + " điểm")
+                    break      
+                    default:
+                    let dh4 = dt + dv + da + 0.5
+                    document.getElementById("ketqua").innerHTML = ("Điểm thi Đại học khối D của bạn là " + dh4 + " điểm")
+                    break                          
+            }
+
+
         }
-
-
     </script>
 
 
