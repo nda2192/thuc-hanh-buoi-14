@@ -9,31 +9,33 @@
 </head>
 
 <body>
-    <input type="text" id="thang">
-    <input type="button" value="Tinh so ngay" onclick="tinhsongay()">
+    <input type="text" id="name" placeholder="Nhập tên viết liền không dấu" style="width:200px">
+    <input type="button" value="Xem gia" onclick="xemgia()">
     <p id="ketqua"></p>
     <script>
-        function tinhsongay() {
-            let a = document.getElementById("thang").value
+        function vl(){
+            document.write("Nhập chữ không dấu viết liền nhe")
+        }
+        function xemgia() {
+            let a = document.getElementById("name").value
             switch (a) {
-                case "1":
-                case "3":
-                case "5":
-                case "7":
-                case "8":
-                case "10":
-                case "12":
-                    document.getElementById("ketqua").innerHTML = ("Thang " + a + " co 31 ngay")
+                case "oi":
+                case "duahau":
+                    document.getElementById("ketqua").innerHTML = (a + " co gia la 20k/kg")
                     break
-                case "4":
-                case "6":
-                case "9":
-                case "11":
-                    document.getElementById("ketqua").innerHTML = ("Thang " + a + " co 30 ngay")
+                case "tao":
+                case "xoai":
+                    document.getElementById("ketqua").innerHTML = (a + " co gia la 30k/kg")
                     break
-                case "2":
-                    document.getElementById("ketqua").innerHTML = ("Thang 2 co 28 hoac 29 ngay")
+                case "cam":
+                case "chomchom":
+                    document.getElementById("ketqua").innerHTML = (a + " co gia la 40k/kg")
                     break
+                case "oi":
+                case "mangcut":
+                    document.getElementById("ketqua").innerHTML = (a + " co gia la 50k/kg")
+                    break
+
             }
         }
     </script>
